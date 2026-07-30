@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/ghl_voice_agent_poster.png" alt="AI Voice Receptionist for GoHighLevel" width="100%" />
+<img src="ghl_voice_agent_poster.png" alt="AI Voice Receptionist for GoHighLevel" width="100%" />
 
 # 📞 AI Voice Receptionist for GoHighLevel
 
@@ -103,11 +103,11 @@ sequenceDiagram
 
 **The n8n orchestration — 37 nodes across 5 tool branches (book, check availability, get booking, reschedule, cancel), with error handling:**
 
-![n8n workflow](assets/n8n_workflow_readable.png)
+![n8n workflow](n8n_workflow_readable.png)
 
 **The live front-end — a web-call widget wired straight to the agent:**
 
-![Live website demo](assets/website-demo.png)
+![Live website demo](website-demo.png)
 
 ---
 
@@ -222,14 +222,13 @@ Ring the number and book something. Watch the contact, calendar event, and pipel
 .
 ├── README.md
 ├── LICENSE
+├── ghl_voice_agent_poster.png            # hero banner
+├── n8n_workflow_readable.png             # workflow screenshot
+├── website-demo.png                      # live front-end screenshot
 ├── workflow/
 │   └── ghl-voice-receptionist.n8n.json   # secrets scrubbed → placeholders only
-├── prompts/
-│   └── system-prompt.md                  # the agent's brain
-└── assets/
-    ├── ghl_voice_agent_poster.png        # hero banner
-    ├── n8n_workflow_readable.png         # workflow screenshot
-    └── website-demo.png                  # live front-end screenshot
+└── prompts/
+    └── system-prompt.md                  # the agent's brain
 ```
 
 ---
