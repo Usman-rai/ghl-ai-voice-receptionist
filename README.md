@@ -29,6 +29,13 @@ It is **not** a demo that reads from a script. It talks to the live GHL API on e
 
 ## 🎥 See it in action
 
+[audio proof.mp3](https://github.com/user-attachments/files/30539354/audio.proof.mp3)
+
+
+
+
+
+
 **A real call, end to end — the agent checks the live calendar and books the appointment by voice.**
 
 <!--
