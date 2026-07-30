@@ -89,6 +89,18 @@ sequenceDiagram
 
 ---
 
+## 📸 Screenshots
+
+**The n8n orchestration — 37 nodes, 5 tool branches, error handling:**
+
+![n8n workflow](assets/screenshots/n8n-workflow.png)
+
+| Booking written live to the GHL calendar | Talking to the agent in the browser |
+|:---:|:---:|
+| ![GHL calendar booking](assets/screenshots/ghl-booking.png) | ![Web call widget](assets/screenshots/web-call.png) |
+
+---
+
 ## 🧰 Tech stack
 
 | Layer | Tool | Role |
@@ -134,6 +146,26 @@ Most of the work in a project like this isn't the happy path. These are the real
 
 ---
 
+## 🔑 Two ways to connect GoHighLevel
+
+GoHighLevel gives you two ways to authenticate an integration. This project uses **Method B (Private Integration Token)** — here's both, and the reasoning.
+
+### Method A — Marketplace OAuth App (the official / standard route)
+The standard way GoHighLevel expects public, multi-account apps to integrate. You create a developer account in the GoHighLevel Marketplace, register an app, and use the OAuth 2.0 flow (client ID/secret → access + refresh tokens) to call the API on a location's behalf.
+- ✅ The proper choice if you're distributing one app across many client accounts.
+- ⚠️ Creating the marketplace developer account requires **phone / SMS OTP verification** — if that number can't receive the OTP (a common blocker outside the US), you can't complete signup.
+- ⚠️ n8n's built-in HighLevel (OAuth) node also has documented refresh-token bugs that can silently break a workflow after the token cycles.
+
+### Method B — Private Integration Token (PIT) — used here
+A static, scoped token created directly under `Settings → Private Integrations` in a normal agency or sub-account.
+- ✅ **No marketplace developer account. No SMS OTP.** Generated in a few clicks by an admin.
+- ✅ Works cleanly as a Bearer token inside an n8n **Header Auth** credential.
+- ✅ Ideal for single-account, client-specific builds — and for anyone in a region where marketplace SMS verification fails.
+
+> **Bottom line:** unless you're publishing a public multi-account app, the PIT is the simpler, more portable choice — and it removes the SMS-OTP roadblock entirely.
+
+---
+
 ## 🚀 Getting started
 
 ### Prerequisites
@@ -142,9 +174,8 @@ Most of the work in a project like this isn't the happy path. These are the real
 - An n8n instance (cloud or self-hosted)
 - An ElevenLabs voice
 
-### 1. Create a GHL Private Integration Token (PIT)
-`Settings → Private Integrations → Create`. Give it calendar, contacts, opportunities, and `conversations/messages.write` scopes.
-> PITs are static scoped tokens created entirely inside GHL — **no marketplace developer account and no SMS OTP required.**
+### 1. Create your GoHighLevel credential
+Use a **Private Integration Token** (see [Two ways to connect](#-two-ways-to-connect-gohighlevel) above): `Settings → Private Integrations → Create`, with calendar, contacts, opportunities, and `conversations/messages.write` scopes.
 
 ### 2. Configure environment values
 Never hardcode these into a committed file. Use placeholders like:
