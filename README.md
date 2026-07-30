@@ -1,8 +1,10 @@
 <div align="center">
 
+<img src="assets/ghl_voice_agent_poster.png" alt="AI Voice Receptionist for GoHighLevel" width="100%" />
+
 # 📞 AI Voice Receptionist for GoHighLevel
 
-### A 24/7 voice agent that answers the phone, reads a live calendar, and books, reschedules, and cancels appointments by voice — then updates the CRM. No human on the line.
+### A 24/7 voice agent that answers every call, reads a live calendar, and books, reschedules, and cancels appointments by voice — then updates the CRM automatically. Every after-hours enquiry captured, not lost.
 
 ![n8n](https://img.shields.io/badge/orchestration-n8n-EA4B71?logo=n8n&logoColor=white)
 ![VAPI](https://img.shields.io/badge/voice-VAPI-6C47FF)
@@ -99,13 +101,13 @@ sequenceDiagram
 
 ## 📸 Screenshots
 
-**The n8n orchestration — 37 nodes, 5 tool branches, error handling:**
+**The n8n orchestration — 37 nodes across 5 tool branches (book, check availability, get booking, reschedule, cancel), with error handling:**
 
-![n8n workflow](assets/screenshots/n8n-workflow.png)
+![n8n workflow](assets/n8n_workflow_readable.png)
 
-| Booking written live to the GHL calendar | Talking to the agent in the browser |
-|:---:|:---:|
-| ![GHL calendar booking](assets/screenshots/ghl-booking.png) | ![Web call widget](assets/screenshots/web-call.png) |
+**The live front-end — a web-call widget wired straight to the agent:**
+
+![Live website demo](assets/website-demo.png)
 
 ---
 
@@ -225,7 +227,9 @@ Ring the number and book something. Watch the contact, calendar event, and pipel
 ├── prompts/
 │   └── system-prompt.md                  # the agent's brain
 └── assets/
-    └── screenshots/                       # workflow + call screenshots
+    ├── ghl_voice_agent_poster.png        # hero banner
+    ├── n8n_workflow_readable.png         # workflow screenshot
+    └── website-demo.png                  # live front-end screenshot
 ```
 
 ---
