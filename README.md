@@ -33,6 +33,10 @@ It is **not** a demo that reads from a script. It talks to the live GHL API on e
 
 
 
+https://github.com/user-attachments/assets/bf5ec91a-380d-43e6-89fc-c6b7c2d1d194
+
+
+
 
 
 
