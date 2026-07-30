@@ -25,14 +25,22 @@ It is **not** a demo that reads from a script. It talks to the live GHL API on e
 
 ---
 
-## 🎥 See it work
+## 🎥 See it in action
 
-| | Link |
-|---|---|
-| 🗣️ Full voice walkthrough | `https://www.loom.com/share/5eee8303bfe64e659869980768394bae` |
-| 🌐 Live web-call demo | `https://michigan-home-sync.base44.app` |
+**A real call, end to end — the agent checks the live calendar and books the appointment by voice.**
 
-> Swap these for your own links. The web demo lets anyone talk to the agent from the browser.
+<!--
+  ADD YOUR VIDEO HERE (it plays inline, right on this page — no YouTube/Loom needed):
+  1. Once this README is committed to your repo, open it and click the pencil (Edit) icon.
+  2. Click the empty line just below this comment so your cursor is there.
+  3. Drag your .mp4 recording straight into the editor. Wait for the upload bar to finish —
+     GitHub turns it into a https://github.com/user-attachments/assets/... link by itself.
+  4. Optional: press Enter and drag a second clip (the GoHighLevel walkthrough) in too.
+  5. Commit changes. Keep each clip under ~100 MB — trim or compress if it's larger.
+-->
+
+
+
 
 ---
 
